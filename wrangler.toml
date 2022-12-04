@@ -1,0 +1,9 @@
+name = "hpl-stripe-checkout"
+main = "./.output/server/index.mjs"
+account_id = "9daf554a647e8485085e1bfe6244c8a3"
+workers_dev = true
+compatibility_date = "2022-12-04"
+route = "checkout.highparklivery.com/*"
+
+[site]
+bucket = ".output/public"
