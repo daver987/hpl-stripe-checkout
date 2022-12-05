@@ -28,6 +28,10 @@ const {
   // utm_source,
 } = route
 
+//take the amount query and remove the commas and dollar signs and return a number with 2 decimal places
+const amountNumber = Number(amount.replace(/[^0-9.-]+/g, ''))
+const amountFormatted = amountNumber.toFixed(2)
+
 const products = [
   {
     id: quote,
@@ -37,18 +41,25 @@ const products = [
     pickupTime: time,
     serviceType: service,
     vehicleType: vehicle,
-    subtotal: parseFloat(amount) as number,
+    subtotal: amountFormatted,
     image:
       'https://imagedelivery.net/9mQjskQ9vgwm3kCilycqww/6371d7ad-ac92-4081-2fde-5e243dd2d500/1024',
   },
 ]
-const total = computed(() => {
-  return products.reduce((acc, product) => acc + product.subtotal, 0)
-})
+
+//write a function that takes a string removes all commas and returns a number
+
+// const total = products.reduce((acc, product) => {
+//   return acc + product.subtotal
+// }, 0)
+
+// const total = computed(() => {
+//   return products.reduce((acc, product) => acc + product.subtotal, 0)
+// })
 // convert total to have 2 decimal places
-const totalFormatted = computed(() => {
-  return total.value.toFixed(2)
-})
+// const totalFormatted = computed(() => {
+//   return total.value.toFixed(2)
+// })
 const createSession = async () => {
   const { data } = await useFetch(`/api/create-checkout-session`, {
     query: {
