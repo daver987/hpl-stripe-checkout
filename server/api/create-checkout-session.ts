@@ -16,7 +16,6 @@ export default defineEventHandler(async (event) => {
     name: `${query.fname} ${query.lname}`,
   })
   const session = <Session>await stripe.checkout.sessions.create({
-    customer_email: query.email,
     billing_address_collection: 'auto',
     mode: 'setup',
     payment_method_types: ['card'],
