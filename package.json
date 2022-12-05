@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "build": "nuxt build",
+    "build": "nuxt build && wrangler publish",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
@@ -9,6 +9,7 @@
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20221111.1",
+    "@tailwindcss/container-queries": "^0.1.0",
     "nuxt": "3.0.0",
     "prettier": "^2.8.0",
     "stripe": "^11.1.0",

@@ -15,15 +15,13 @@ const props = defineProps<Props>()
 </script>
 
 <template>
-  <div class="flex justify-between items-center border-b border-t py-2">
-    <div class="flex items-center">
-      <img
-        :src="image"
-        :alt="alt"
-        class="w-32 h-32 object-center object-scale-down rounded-lg"
-      />
-      <div class="flex flex-col ml-4">
-        <span class="font-bold">Description</span>
+  <div class="@container border-b border-t py-4">
+    <div class="grid grid-cols-1 @2xl:grid-cols-12">
+      <div class="place-items-center @2xl:col-span-3 py-2">
+        <img :src="image" :alt="alt" class="w-full max-w-sm mx-auto" />
+      </div>
+      <div class="col-span-6 py-2">
+        <span class="font-bold mb-2 text-2xl @2xl:text-xl">Description</span>
         <div class="flex flex-row justify-start place-items-center">
           <span class="text-base text-gray-700 font-semibold mr-1"
             >Pickup Date: </span
@@ -55,7 +53,11 @@ const props = defineProps<Props>()
           ><span class="text-sm text-gray-500"> {{ vehicleType }}</span>
         </div>
       </div>
+      <div
+        class="py-2 px-4 mt-2 @2xl:col-span-3 @2xl:flex @2xlx:flex-col justify-end items-end"
+      >
+        <span class="font-bold text-lg">Subtotal: ${{ subtotal }}</span>
+      </div>
     </div>
-    <span>Subtotal: ${{ subtotal }}</span>
   </div>
 </template>
