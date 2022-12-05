@@ -9,7 +9,7 @@ const stripe = new Stripe(stripeKey, {
 })
 
 export default defineEventHandler(async (event) => {
-  const query = getQuery(event) as unknown as Query
+  const query = (await getQuery(event)) as unknown as Query
 
   const customer = await stripe.customers.create({
     email: query.email,

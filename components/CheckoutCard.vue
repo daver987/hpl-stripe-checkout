@@ -1,6 +1,26 @@
 <script setup lang="ts">
-import { Session } from '~/types/session'
+// import { Session } from '~/types/session'
 import { Query } from '~/types/query'
+
+type ReturnType = {
+  statusCode: number
+  url: string
+  customer: string
+}
+const route = useRoute().query as unknown as Query
+const {
+  email,
+  fname,
+  lname,
+  service,
+  amount,
+  quote,
+  // utm_medium,
+  // _hsmi,
+  // _hsenc,
+  // utm_content,
+  // utm_source,
+} = route
 
 const products = [
   {
@@ -11,7 +31,7 @@ const products = [
     pickupTime: '9:00 AM',
     serviceType: 'Point To Point',
     vehicleType: 'Premium Sedan',
-    subtotal: 99.99,
+    subtotal: parseFloat(amount) as number,
     image:
       'https://imagedelivery.net/9mQjskQ9vgwm3kCilycqww/6371d7ad-ac92-4081-2fde-5e243dd2d500/1024',
   },
@@ -31,9 +51,10 @@ const products = [
 const total = computed(() => {
   return products.reduce((acc, product) => acc + product.subtotal, 0)
 })
-const route = useRoute().query as unknown as Query
-const { email, fname, lname, service, amount, quote } = route
-
+// convert total to have 2 decimal places
+const totalFormatted = computed(() => {
+  return total.value.toFixed(2)
+})
 const createSession = async () => {
   const { data } = await useFetch(`/api/create-checkout-session`, {
     query: {
@@ -45,15 +66,11 @@ const createSession = async () => {
       quote,
     },
   })
+  console.log(data)
 
-  type ReturnType = {
-    statusCode: number
-    url: string
-    customer: string
-  }
-  const { statusCode, url, customer } = data.value as ReturnType
+  const { statusCode, url, customer } = (await data.value) as ReturnType
   console.log(statusCode, url, customer)
-  navigateTo(url, {
+  await navigateTo(url, {
     redirectCode: 303,
     external: true,
   })
@@ -80,7 +97,7 @@ const createSession = async () => {
     />
     <div class="w-full p-4 border-b flex justify-end">
       <div class="font-bold text-2xl">
-        Total: <span>${{ total }}</span>
+        Total: <span>${{ totalFormatted }}</span>
       </div>
     </div>
     <form
@@ -97,5 +114,10 @@ const createSession = async () => {
         </button>
       </div>
     </form>
+    <a
+      class="px-5 py-1.5 bg-green-700"
+      href="http://localhost:3000?amount=34.78"
+      >Change Url</a
+    >
   </div>
 </template>

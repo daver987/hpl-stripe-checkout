@@ -15,5 +15,8 @@ module.exports = {
     extend: {},
   },
 
-  plugins: [require('@tailwindcss/container-queries')],
+  plugins: [
+    require('@tailwindcss/container-queries'),
+    require('@tailwindcss/forms'),
+  ],
 }
