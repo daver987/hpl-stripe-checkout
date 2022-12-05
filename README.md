@@ -1,28 +1,15 @@
-# Nuxt 3 Minimal Starter
+# HPL Checkout Flow
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
 ## Setup
-
-Make sure to install the dependencies:
-
-```bash
-# yarn
-yarn install
-
-# npm
-npm install
-
-# pnpm
-pnpm install --shamefully-hoist
-```
-
+This is a simple checkout flow that uses the HPL API to create a checkout session and then redirects the user to the HPL checkout page.
+The project uses Nuxt 3, TailwindCSS, and Cloudflare Workers for easy deployment.
 ## Development Server
 
 Start the development server on http://localhost:3000
 
 ```bash
-npm run dev
+yarn dev
 ```
 
 ## Production
@@ -30,13 +17,12 @@ npm run dev
 Build the application for production:
 
 ```bash
-npm run build
+yarn build
 ```
 
 Locally preview production build:
 
 ```bash
-npm run preview
+yarn preview
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
