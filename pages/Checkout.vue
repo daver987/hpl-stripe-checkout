@@ -1,11 +1,10 @@
 <script lang="ts" setup>
-definePageMeta({
-  alias: ['/'],
-})
+//scripts
 </script>
 
 <template>
   <section class="px-6 bg-gray-200 min-h-screen py-8">
+    <Navigation />
     <div class="text-center mb-6">
       <h1 class="text-3xl font-bold mb-3">Checkout</h1>
       <p class="text-gray-500 mb-1">

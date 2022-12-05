@@ -1,14 +1,37 @@
 <script setup lang="ts">
-// import { Session } from '~/types/session'
 import { Query } from '~/types/query'
+import { ReturnType } from '~/types/returnType'
 
-type ReturnType = {
-  statusCode: number
-  url: string
-  customer: string
+const vehicleImage = {
+  cadillacEscalade:
+    'https://imagedelivery.net/9mQjskQ9vgwm3kCilycqww/6371d7ad-ac92-4081-2fde-5e243dd2d500/1024',
+  cadillacXts:
+    'https://imagedelivery.net/9mQjskQ9vgwm3kCilycqww/8cdff651-33c3-419a-7767-3987d0c0a400/1024',
+  suburban:
+    'https://imagedelivery.net/9mQjskQ9vgwm3kCilycqww/8463024a-c98a-4bf2-57a2-5fa3d6454200/1024',
+  navigator:
+    'https://imagedelivery.net/9mQjskQ9vgwm3kCilycqww/07179b76-48f0-4854-fcc2-ba5bf8a9fc00/1024',
+  continental:
+    'https://imagedelivery.net/9mQjskQ9vgwm3kCilycqww/b5639f0e-7c29-427f-4d5b-aa8d3ef01e00/1024',
+}
+//take the vehicle query and compare it against the vehicle image object return the image url that goes with the vehicle the Standard Sedan is the cadillacXts, the StandardSuv is the suburban, the Premium Sedan is the continental, and the premium SUV is the navigator
+const vehicleImageURL = (vehicle: string) => {
+  switch (vehicle) {
+    case 'Standard Sedan':
+      return vehicleImage.cadillacXts
+    case 'Standard SUV':
+      return vehicleImage.suburban
+    case 'Premium Sedan':
+      return vehicleImage.continental
+    case 'Premium SUV':
+      return vehicleImage.navigator
+    default:
+      return vehicleImage.cadillacXts
+  }
 }
 const route = useRoute().query as unknown as Query
 console.log(route)
+
 const {
   email,
   fname,
@@ -28,6 +51,8 @@ const {
 const amountNumber = Number(amount.replace(/[^0-9.-]+/g, ''))
 const amountFormatted = amountNumber.toFixed(2) as unknown as number
 
+const selectedVehicle = vehicleImageURL(vehicle)
+
 const products = [
   {
     id: quote,
@@ -38,24 +63,10 @@ const products = [
     serviceType: service,
     vehicleType: vehicle,
     subtotal: amountFormatted,
-    image:
-      'https://imagedelivery.net/9mQjskQ9vgwm3kCilycqww/6371d7ad-ac92-4081-2fde-5e243dd2d500/1024',
+    image: selectedVehicle,
   },
 ]
 
-//write a function that takes a string removes all commas and returns a number
-
-// const total = products.reduce((acc, product) => {
-//   return acc + product.subtotal
-// }, 0)
-
-// const total = computed(() => {
-//   return products.reduce((acc, product) => acc + product.subtotal, 0)
-// })
-// convert total to have 2 decimal places
-// const totalFormatted = computed(() => {
-//   return total.value.toFixed(2)
-// })
 const createSession = async () => {
   const { data } = await useFetch(`/api/create-checkout-session`, {
     query: {
@@ -104,7 +115,7 @@ const createSession = async () => {
     />
     <div class="w-full p-4 border-b flex justify-end">
       <div class="font-bold text-2xl">
-        Total: <span>${{ totalFormatted }}</span>
+        Total: <span>${{ amountFormatted }}</span>
       </div>
     </div>
     <form

@@ -11,7 +11,11 @@ interface Props {
   subtotal: number
 }
 
-const props = defineProps<Props>()
+const {
+  subtotal = 0.0,
+  vehicleType = 'Standard Sedan',
+  serviceType = 'Point To Point',
+} = defineProps<Props>()
 </script>
 
 <template>
