@@ -8,6 +8,7 @@ type ReturnType = {
   customer: string
 }
 const route = useRoute().query as unknown as Query
+console.log(route)
 const {
   email,
   fname,
