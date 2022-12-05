@@ -173,3 +173,4 @@ dist
 wrangler.toml
 .output
 .vscode
+.netlify
