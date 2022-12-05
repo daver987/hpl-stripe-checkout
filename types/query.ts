@@ -10,4 +10,5 @@ export interface Query {
   origin: string
   destination: string
   vehicle: string
+  phone: string
 }

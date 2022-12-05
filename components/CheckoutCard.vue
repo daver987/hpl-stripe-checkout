@@ -21,16 +21,12 @@ const {
   quote,
   date,
   time,
-  // utm_medium,
-  // _hsmi,
-  // _hsenc,
-  // utm_content,
-  // utm_source,
+  phone,
 } = route
 
 //take the amount query and remove the commas and dollar signs and return a number with 2 decimal places
 const amountNumber = Number(amount.replace(/[^0-9.-]+/g, ''))
-const amountFormatted = amountNumber.toFixed(2)
+const amountFormatted = amountNumber.toFixed(2) as unknown as number
 
 const products = [
   {
@@ -74,6 +70,7 @@ const createSession = async () => {
       destination,
       amount,
       quote,
+      phone,
     },
   })
   console.log(data)

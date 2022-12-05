@@ -14,6 +14,7 @@ export default defineEventHandler(async (event) => {
   const customer = await stripe.customers.create({
     email: query.email,
     name: `${query.fname} ${query.lname}`,
+    phone: query.phone,
   })
   const session = <Session>await stripe.checkout.sessions.create({
     billing_address_collection: 'auto',
