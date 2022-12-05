@@ -113,10 +113,10 @@ const createSession = async () => {
         </button>
       </div>
     </form>
-    <a
-      class="px-5 py-1.5 bg-green-700"
-      href="http://localhost:3000?amount=34.78"
-      >Change Url</a
-    >
+    <!--    <a-->
+    <!--      class="px-5 py-1.5 bg-green-700"-->
+    <!--      href="http://localhost:3000?amount=34.78"-->
+    <!--      >Change Url</a-->
+    <!--    >-->
   </div>
 </template>
