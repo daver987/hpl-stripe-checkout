@@ -5570,10 +5570,10 @@ wide-align@^1.1.2:
   dependencies:
     string-width "^1.0.2 || 2 || 3 || 4"
 
-wrangler@^2.5.0:
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/wrangler/-/wrangler-2.5.0.tgz#e9b0bc5365d6aca7127505607cd5a63b6cea4c3d"
-  integrity sha512-7Y7Vh4yi1Vpa/o2o48VgWMv6G/3u8SPR3CJEWgntL4zPZog7iIxl0R2QjthWpsPHI7+PK6cFtnpSaSrcdEk+vw==
+wrangler@^2.6.0:
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/wrangler/-/wrangler-2.6.0.tgz#7b4124228cb565ef6c32f070027b44c2e4cc55f8"
+  integrity sha512-ktAH4lwOfl3cjNzgURiT9Au3ZOB5wMibbCJZ6cWSavhC4ctrsEc6FTi19h3cYHjNhDFCipj9UUuKPG/eeYWlzw==
   dependencies:
     "@cloudflare/kv-asset-handler" "^0.2.0"
     "@esbuild-plugins/node-globals-polyfill" "^0.1.1"

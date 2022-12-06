@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "build": "nuxt build && wrangler publish",
+    "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
@@ -14,7 +14,7 @@
     "nuxt": "3.0.0",
     "prettier": "^2.8.0",
     "stripe": "^11.1.0",
-    "wrangler": "^2.5.0"
+    "wrangler": "^2.6.0"
   },
   "dependencies": {
     "@nuxtjs/tailwindcss": "^6.1.3",
