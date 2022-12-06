@@ -29,8 +29,31 @@ const vehicleImageURL = (vehicle: string) => {
       return vehicleImage.cadillacXts
   }
 }
-const route = useRoute().query as unknown as Query
-console.log(route)
+const routes = () => {
+  const route = useRoute().query as unknown as Query
+  console.log(route)
+  //check if the query is empty
+  if (Object.keys(route).length === 0) {
+    //if it is empty then notify the user that something went wrong
+    return {
+      email: 'Oops, something went wrong',
+      fname: 'Oops, something went wrong',
+      lname: 'Oops, something went wrong',
+      phone: 'Oops, something went wrong',
+      origin: 'Ooops, something went wrong',
+      destination: 'Ooops, something went wrong',
+      date: 'N/A',
+      time: 'N/A',
+      service: 'Point To Point',
+      vehicle: 'Standard Sedan',
+      amount: '0.0',
+    }
+  }
+  //if the query is not empty then return the query
+  else {
+    return route as unknown as Query
+  }
+}
 
 const {
   email,
@@ -45,12 +68,11 @@ const {
   date,
   time,
   phone,
-} = route
+} = routes() as Query
 
-//take the amount query and remove the commas and dollar signs and return a number with 2 decimal places
 const amountNumber = Number(amount.replace(/[^0-9.-]+/g, ''))
-const amountFormatted = amountNumber.toFixed(2) as unknown as number
-
+const amountNumberValue = amountNumber ? amountNumber : 0
+const amountFormatted = amountNumberValue.toFixed(2) as unknown as number
 const selectedVehicle = vehicleImageURL(vehicle)
 
 const products = [
@@ -66,7 +88,6 @@ const products = [
     image: selectedVehicle,
   },
 ]
-
 const createSession = async () => {
   const { data } = await useFetch(`/api/create-checkout-session`, {
     query: {
@@ -132,10 +153,5 @@ const createSession = async () => {
         </button>
       </div>
     </form>
-    <!--    <a-->
-    <!--      class="px-5 py-1.5 bg-green-700"-->
-    <!--      href="http://localhost:3000?amount=34.78"-->
-    <!--      >Change Url</a-->
-    <!--    >-->
   </div>
 </template>
