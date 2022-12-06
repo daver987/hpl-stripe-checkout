@@ -12,6 +12,11 @@ interface Props {
 }
 
 const {
+  alt = 'vehicle image',
+  dropoffLocation = 'Ooops, something went wrong',
+  pickupLocation = 'Oops, something went wrong',
+  image = 'https://imagedelivery.net/9mQjskQ9vgwm3kCilycqww/8cdff651-33c3-419a-7767-3987d0c0a400/1024',
+  pickupTime = 'N/A',
   subtotal = 0.0,
   vehicleType = 'Standard Sedan',
   serviceType = 'Point To Point',

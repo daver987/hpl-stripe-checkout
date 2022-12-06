@@ -3,11 +3,11 @@
 </script>
 
 <template>
-  <section class="px-6 bg-gray-200 min-h-screen py-8">
+  <section class="bg-gray-200 min-h-screen">
     <Navigation />
     <div class="text-center mb-6">
-      <h1 class="text-3xl font-bold mb-3">Checkout</h1>
-      <p class="text-gray-500 mb-1">
+      <h1 class="text-3xl font-bold my-3">Checkout</h1>
+      <p class="text-gray-500 mb-1 mt-2">
         Please review your order before proceeding to checkout
       </p>
       <p class="text-base text-red-700">

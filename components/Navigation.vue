@@ -1,21 +1,26 @@
 <template>
-  <nav class="grid grid-cols-6 p-6 bg-black">
-    <NuxtLink to="/" class="max-w-[140px] col-span-2">
-      <img
-        src="/hpl-logo-3.png"
-        height="568"
-        width="960"
-        alt="High Park Livery logo"
-        class="w-full"
-      />
-    </NuxtLink>
-    <div
-      v-show="false"
-      class="col-span-4 flex flex-row justify-end items-center"
-    >
-      Go Home
-    </div>
-  </nav>
+  <div class="w-full bg-black">
+    <nav class="grid grid-cols-6 p-5 bg-black mx-auto max-w-6xl">
+      <NuxtLink
+        to="https://highparklivery.com"
+        class="max-w-[120px] col-span-2"
+      >
+        <img
+          src="/hpl-logo-3.png"
+          height="568"
+          width="960"
+          alt="High Park Livery logo"
+          class="w-full"
+        />
+      </NuxtLink>
+      <div
+        v-show="false"
+        class="col-span-4 flex flex-row justify-end items-center"
+      >
+        Go Home
+      </div>
+    </nav>
+  </div>
 </template>
 <script>
 export default {
