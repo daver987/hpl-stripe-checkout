@@ -27,8 +27,8 @@ import Navigation from '~/components/Navigation.vue'
         </div>
         <h2>Success</h2>
         <p class="text-xs leading-8">
-          We received your booking request;<br />
-          we'll send you a confirmation shortly!
+          We received your booking request<br />
+          You will receive a confirmation shortly!
         </p>
       </div>
       <div class="space-y-2 mt-4">
