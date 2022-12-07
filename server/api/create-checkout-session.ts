@@ -2,7 +2,7 @@ import { Stripe } from 'stripe'
 import { Session } from '~/types/session'
 import { Query } from '~/types/query'
 
-const YOUR_DOMAIN = 'https://hpl-checkout.netlify.app/'
+const YOUR_DOMAIN = 'https://hpl-checkout.netlify.app'
 const stripeKey = useRuntimeConfig().stripeKey
 const stripe = new Stripe(stripeKey, {
   apiVersion: '2022-11-15',
