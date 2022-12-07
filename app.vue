@@ -6,20 +6,20 @@ useHead({
       async: true,
     },
   ],
-  link: [
-    {
-      rel: 'stylesheet',
-      href: 'https://unpkg.com/open-props',
-    },
-    {
-      rel: 'stylesheet',
-      href: 'https://unpkg.com/open-props/normalize.min.css',
-    },
-    {
-      rel: 'stylesheet',
-      href: 'https://unpkg.com/open-props/buttons.min.css',
-    },
-  ],
+  // link: [
+  //   {
+  //     rel: 'stylesheet',
+  //     href: 'https://unpkg.com/open-props',
+  //   },
+  //   {
+  //     rel: 'stylesheet',
+  //     href: 'https://unpkg.com/open-props/normalize.min.css',
+  //   },
+  //   {
+  //     rel: 'stylesheet',
+  //     href: 'https://unpkg.com/open-props/buttons.min.css',
+  //   },
+  // ],
 })
 </script>
 
