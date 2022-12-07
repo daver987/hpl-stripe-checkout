@@ -22,19 +22,23 @@ useHead({
 <template>
   <section class="min-h-screen bg-primary">
     <Navigation />
-    <template>
-      <div class="bg-orange-200 p-6 text-center">
-        <p class="text-2xl font-bold mb-2">
-          Forgot to add something to your cart? Shop around then come back to
-          pay!
-        </p>
-        <p>Don't forget to check out our current promotions:</p>
-        <div class="grid grid-cols-2 gap-4">
-          <div>20% off all clothing</div>
-          <div>Buy one, get one free on select items</div>
-        </div>
+    <div class="bg-orange-200 p-6 text-center">
+      <p class="text-2xl font-bold mb-2">
+        Forgot to add something? Shop around then come back to pay!
+      </p>
+      <p>Don't forget to check out our current promotions:</p>
+      <div class="grid grid-cols-2 gap-4">
+        <div>Book early and get a no charge vehicle upgrade!!</div>
+        <div>Book a round trip and get an extra 10% OFF!</div>
       </div>
-    </template>
+    </div>
+    <div class="p-12 flex flex-row justify-center items-center">
+      <NuxtLink
+        class="bg-black px-12 py-4 rounded-md text-white"
+        to="https://highparklivery.com"
+        >HOME</NuxtLink
+      >
+    </div>
   </section>
 </template>
 
