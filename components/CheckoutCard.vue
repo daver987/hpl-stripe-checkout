@@ -119,8 +119,11 @@ const createSession = async () => {
 
 <template>
   <div
-    class="bg-white max-w-6xl mx-auto bg-white rounded-2xl shadow-lg px-6 pt-6 pb-2"
+    class="bg-white max-w-6xl mx-auto bg-white rounded-2xl shadow-lg px-6 pt-1 pb-2"
   >
+    <p class="text-gray-500 mb-1 font-bold mt-2 text-center">
+      Please review your order before proceeding.
+    </p>
     <TableRow
       v-for="product in products"
       :key="product.id"

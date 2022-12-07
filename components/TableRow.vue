@@ -29,37 +29,39 @@ const {
       <div class="place-items-center @2xl:col-span-3 py-2">
         <img :src="image" :alt="alt" class="w-full max-w-sm mx-auto" />
       </div>
-      <div class="col-span-6 py-2">
-        <span class="font-bold mb-2 text-2xl @2xl:text-xl">Description</span>
-        <div class="flex flex-row justify-start place-items-center">
-          <span class="text-base text-gray-700 font-semibold mr-1"
-            >Pickup Date: </span
-          ><span class="text-sm text-gray-500"> {{ pickupDate }}</span>
-        </div>
-        <div class="flex flex-row justify-start place-items-center">
-          <span class="text-base text-gray-700 font-semibold mr-1"
-            >Pickup Time: </span
-          ><span class="text-sm text-gray-500"> {{ pickupTime }}</span>
-        </div>
-        <div class="flex flex-row justify-start place-items-center">
-          <span class="text-base text-gray-700 font-semibold mr-1"
-            >Pickup Location: </span
-          ><span class="text-sm text-gray-500"> {{ pickupLocation }}</span>
-        </div>
-        <div class="flex flex-row justify-start place-items-center">
-          <span class="text-base text-gray-700 font-semibold mr-1"
-            >Dropoff Location: </span
-          ><span class="text-sm text-gray-500"> {{ dropoffLocation }}</span>
-        </div>
-        <div class="flex flex-row justify-start place-items-center">
-          <span class="text-base text-gray-700 font-semibold mr-1"
-            >Service: </span
-          ><span class="text-sm text-gray-500"> {{ serviceType }}</span>
-        </div>
-        <div class="flex flex-row justify-start place-items-center">
-          <span class="text-base text-gray-700 font-semibold mr-1"
-            >Vehicle Type:</span
-          ><span class="text-sm text-gray-500"> {{ vehicleType }}</span>
+      <div class="col-span-6 py-2 flex items-center">
+        <div class="my-auto">
+          <span class="font-bold text-2xl @2xl:text-xl">Description</span>
+          <div class="flex flex-row justify-start place-items-center mt-2">
+            <span class="text-base text-gray-700 font-semibold mr-1"
+              >Pickup Date: </span
+            ><span class="text-sm text-gray-500"> {{ pickupDate }}</span>
+          </div>
+          <div class="flex flex-row justify-start place-items-center">
+            <span class="text-base text-gray-700 font-semibold mr-1"
+              >Pickup Time: </span
+            ><span class="text-sm text-gray-500"> {{ pickupTime }}</span>
+          </div>
+          <div class="flex flex-row justify-start place-items-center">
+            <span class="text-base text-gray-700 font-semibold mr-1"
+              >Pickup Location: </span
+            ><span class="text-sm text-gray-500"> {{ pickupLocation }}</span>
+          </div>
+          <div class="flex flex-row justify-start place-items-center">
+            <span class="text-base text-gray-700 font-semibold mr-1"
+              >Dropoff Location: </span
+            ><span class="text-sm text-gray-500"> {{ dropoffLocation }}</span>
+          </div>
+          <div class="flex flex-row justify-start place-items-center">
+            <span class="text-base text-gray-700 font-semibold mr-1"
+              >Service: </span
+            ><span class="text-sm text-gray-500"> {{ serviceType }}</span>
+          </div>
+          <div class="flex flex-row justify-start place-items-center">
+            <span class="text-base text-gray-700 font-semibold mr-1"
+              >Vehicle Type:</span
+            ><span class="text-sm text-gray-500"> {{ vehicleType }}</span>
+          </div>
         </div>
       </div>
       <div

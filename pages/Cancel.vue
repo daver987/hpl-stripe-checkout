@@ -22,13 +22,15 @@ useHead({
 <template>
   <section class="min-h-screen bg-primary">
     <Navigation />
-    <div class="bg-orange-200 p-6 text-center">
-      <p class="text-2xl font-bold mb-2">
+    <div class="p-6 text-center">
+      <p class="text-3xl font-bold mb-4">
         Forgot to add something? Shop around then come back to pay!
       </p>
-      <p>Don't forget to check out our current promotions:</p>
-      <div class="grid grid-cols-2 gap-4">
-        <div>Book early and get a no charge vehicle upgrade!!</div>
+      <p class="font-bold mb-6">
+        Don't forget to check out our current promotions:
+      </p>
+      <div class="grid md:grid-cols-2 gap-4 place-items-center">
+        <div>Book early and get a complimentary vehicle upgrade!!</div>
         <div>Book a round trip and get an extra 10% OFF!</div>
       </div>
     </div>

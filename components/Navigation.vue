@@ -14,18 +14,24 @@
         />
       </NuxtLink>
       <div
-        v-show="false"
-        class="col-span-4 flex flex-row justify-end items-center"
+        v-show="true"
+        class="col-span-2 flex flex-row justify-center items-center text-white text-3xl uppercase tracking-widest"
       >
-        Go Home
+        {{ title }}
+      </div>
+      <div
+        v-show="false"
+        class="col-span-2 flex flex-row justify-end items-center"
+      >
+        Page Title
       </div>
     </nav>
   </div>
 </template>
-<script>
-export default {
-  name: 'Navigation',
-}
+<script setup lang="ts">
+defineProps<{
+  title?: string
+}>()
 </script>
 <style scoped>
 body {
