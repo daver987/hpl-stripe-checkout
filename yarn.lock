@@ -5021,10 +5021,10 @@ strip-literal@^1.0.0:
   dependencies:
     acorn "^8.8.1"
 
-stripe@^11.1.0:
-  version "11.1.0"
-  resolved "https://registry.yarnpkg.com/stripe/-/stripe-11.1.0.tgz#28931a1136ccc2dffa44ef27027275a7b346a266"
-  integrity sha512-erOslPQZSYKOotQjmKRy4eBon/tdhzLIYzBdPSNVWDdatSQozkkPlh8mVeXNwubYYZYx61/yS23eWiGDF93z2w==
+stripe@^11.2.0:
+  version "11.2.0"
+  resolved "https://registry.yarnpkg.com/stripe/-/stripe-11.2.0.tgz#4a7c4fe70e7e17451e0e86b4c0716b2ef14147cb"
+  integrity sha512-La60wsPOmJI7H9knAkwrkYo5d6psg4csGX+Q1UDUZqNIYpvoxFa/d2xYPNiLdpk5pqH08kp2ll7AfiHoEw8Wxg==
   dependencies:
     "@types/node" ">=8.1.0"
     qs "^6.11.0"
@@ -5570,10 +5570,10 @@ wide-align@^1.1.2:
   dependencies:
     string-width "^1.0.2 || 2 || 3 || 4"
 
-wrangler@^2.6.0:
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/wrangler/-/wrangler-2.6.0.tgz#7b4124228cb565ef6c32f070027b44c2e4cc55f8"
-  integrity sha512-ktAH4lwOfl3cjNzgURiT9Au3ZOB5wMibbCJZ6cWSavhC4ctrsEc6FTi19h3cYHjNhDFCipj9UUuKPG/eeYWlzw==
+wrangler@^2.6.1:
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/wrangler/-/wrangler-2.6.1.tgz#e80d667044501165cad760058a67af67a932d54f"
+  integrity sha512-v0Kh8KQC33xP82pGXZ+67pJMQIx0CHI+gF2nLIcdZbrB0wAQLQ6lsQYS9UpuTupQg4+RetHToDwk+lzRM0J0cQ==
   dependencies:
     "@cloudflare/kv-asset-handler" "^0.2.0"
     "@esbuild-plugins/node-globals-polyfill" "^0.1.1"

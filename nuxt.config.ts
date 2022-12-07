@@ -1,9 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   nitro: {
-    preset: 'cloudflare',
+    preset: 'netlify',
   },
-  modules: ['@nuxtjs/tailwindcss', '@vueuse/nuxt'],
+  modules: ['@vueuse/nuxt', '@nuxtjs/tailwindcss'],
   runtimeConfig: {
     stripeKey: process.env.STRIPE_SECRET_KEY,
   },

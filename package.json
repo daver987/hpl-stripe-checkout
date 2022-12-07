@@ -13,8 +13,8 @@
     "@tailwindcss/forms": "^0.5.3",
     "nuxt": "3.0.0",
     "prettier": "^2.8.0",
-    "stripe": "^11.1.0",
-    "wrangler": "^2.6.0"
+    "stripe": "^11.2.0",
+    "wrangler": "^2.6.1"
   },
   "dependencies": {
     "@nuxtjs/tailwindcss": "^6.1.3",
