@@ -72,10 +72,6 @@ const tax = computed(() => {
   return calculateTax.value.toFixed(2)
 })
 
-// const subtotal2 = computed(() => {
-//   return calculateSubtotal.value.toFixed(2)
-// })
-
 const printSummary = () => {
   window.print()
 }
