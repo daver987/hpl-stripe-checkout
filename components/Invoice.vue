@@ -179,7 +179,7 @@ const space = ' '
             <td
               class="py-4 pl-3 pr-4 text-sm text-right text-gray-500 sm:pr-6 md:pr-0"
             >
-              {{ subtotal }}
+              ${{ subtotal }}
             </td>
           </tr>
           <tr v-if="isRoundTrip" class="border-b border-gray-200">
@@ -215,7 +215,7 @@ const space = ' '
             <td
               class="py-4 pl-3 pr-4 text-sm text-right text-gray-500 sm:pr-6 md:pr-0"
             >
-              {{ subtotal }}
+              ${{ subtotal }}
             </td>
           </tr>
         </tbody>
@@ -237,7 +237,7 @@ const space = ' '
             <td
               class="pt-6 pl-3 pr-4 text-sm text-right text-gray-500 sm:pr-6 md:pr-0"
             >
-              {{ subtotal1 }}
+              ${{ subtotal1 }}
             </td>
           </tr>
           <tr>
@@ -246,18 +246,18 @@ const space = ' '
               colspan="3"
               class="hidden pt-4 pl-6 pr-3 text-sm font-normal text-right text-gray-500 sm:table-cell md:pl-0"
             >
-              Tax
+              HST
             </th>
             <th
               scope="row"
               class="pt-4 pl-4 pr-3 text-sm font-normal text-left text-gray-500 sm:hidden"
             >
-              Tax
+              HST
             </th>
             <td
               class="pt-4 pl-3 pr-4 text-sm text-right text-gray-500 sm:pr-6 md:pr-0"
             >
-              {{ tax }}
+              ${{ tax }}
             </td>
           </tr>
           <tr>
@@ -277,7 +277,7 @@ const space = ' '
             <td
               class="pt-3 pl-3 pr-4 text-sm font-semibold text-right text-gray-900 sm:pr-6 md:pr-0"
             >
-              {{ total }}
+              ${{ total }}
             </td>
           </tr>
         </tfoot>
