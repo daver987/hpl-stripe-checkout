@@ -1,12 +1,10 @@
 <script lang="ts" setup>
 //scripts
-import Navigation from '~/components/Navigation.vue'
 </script>
 
 <!--success page  -->
 <template>
   <div class="min-h-screen bg-secondary">
-    <Navigation />
     <div class="text-black p-6 text-center">
       <h1 class="mb-4 text-4xl text-center text-black font-serif italic">
         Thank You for Booking with <br />
