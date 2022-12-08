@@ -48,9 +48,9 @@ const props = defineProps({
 
 const subtotal1 = computed(() => {
   if (props.isRoundTrip) {
-    return props.subtotal * 2 * 1.08
+    return props.subtotal * 2 * 0.08 + props.subtotal * 2
   }
-  return props.subtotal * 1.08
+  return props.subtotal * 0.08 + props.subtotal
 })
 
 const calculateTax = computed(() => {
