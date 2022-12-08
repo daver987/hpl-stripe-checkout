@@ -1,15 +1,15 @@
 <script setup lang="ts">
 const props = defineProps({
   quoteNumber: {
-    default: 450,
-    type: Number,
+    default: '450',
+    type: String,
   },
   firstname: {
-    default: "John",
+    default: 'John',
     type: String,
   },
   lastname: {
-    default: "Doe",
+    default: 'Doe',
     type: String,
   },
   isRoundTrip: {
@@ -21,57 +21,64 @@ const props = defineProps({
     type: Number,
   },
   pickupDate: {
-    default: "2021-01-01",
+    default: '2021-01-01',
     type: String,
   },
   pickupTime: {
-    default: "12:00",
+    default: '12:00',
     type: String,
   },
   origin: {
-    default: "Pearson Internation Airport",
+    default: 'Pearson Internation Airport',
     type: String,
   },
   destination: {
-    default: "1265 Sixth Line, Oakville ON, L6H 1X2",
+    default: '1265 Sixth Line, Oakville ON, L6H 1X2',
     type: String,
   },
   service: {
-    default: "Point To Point",
+    default: 'Point To Point',
     type: String,
   },
   vehicle: {
-    default: "Standard Sedan",
+    default: 'Standard Sedan',
     type: String,
   },
-});
+})
 
-const calculateTotal = computed(() => {
+const subtotal1 = computed(() => {
   if (props.isRoundTrip) {
-    return props.subtotal * 2;
+    return props.subtotal * 2 * 1.08
   }
-  return props.subtotal;
-});
+  return props.subtotal
+})
+
 const calculateTax = computed(() => {
-  return calculateTotal.value * 0.13;
-});
+  return subtotal1.value * 0.13
+})
+
+const calculateGratuity = computed(() => {
+  return subtotal1.value * 0.2
+})
 
 //write a function that converts the calculated total to a string with 2 decimal places
 const total = computed(() => {
-  return calculateTotal.value.toFixed(2);
-});
+  return (
+    calculateGratuity.value + calculateTax.value + subtotal1.value.toFixed(2)
+  )
+})
 const tax = computed(() => {
-  return calculateTax.value.toFixed(2);
-});
+  return calculateTax.value.toFixed(2)
+})
 
 // const subtotal2 = computed(() => {
 //   return calculateSubtotal.value.toFixed(2)
 // })
 
 const printSummary = () => {
-  window.print();
-};
-const space = " ";
+  window.print()
+}
+const space = ' '
 </script>
 
 <template>
@@ -90,10 +97,14 @@ const space = " ";
           <span class="font-normal"> {{ lastname }}</span
           ><br />
           Pick up Date:
-          <time class="font-normal" :datetime="pickupDate">{{ pickupDate }}</time>
+          <time class="font-normal" :datetime="pickupDate">{{
+            pickupDate
+          }}</time>
           <br />
           Pick up Time:
-          <time class="font-normal" :datetime="pickupTime">{{ pickupTime }}</time>
+          <time class="font-normal" :datetime="pickupTime">{{
+            pickupTime
+          }}</time>
         </p>
       </div>
       <div class="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
@@ -158,13 +169,19 @@ const space = " ";
                 >{{ vehicle }}
               </div>
             </td>
-            <td class="hidden px-3 py-4 text-sm text-right text-gray-500 sm:table-cell">
+            <td
+              class="hidden px-3 py-4 text-sm text-right text-gray-500 sm:table-cell"
+            >
               {{ service }}
             </td>
-            <td class="hidden px-3 py-4 text-sm text-right text-gray-500 sm:table-cell">
+            <td
+              class="hidden px-3 py-4 text-sm text-right text-gray-500 sm:table-cell"
+            >
               {{ vehicle }}
             </td>
-            <td class="py-4 pl-3 pr-4 text-sm text-right text-gray-500 sm:pr-6 md:pr-0">
+            <td
+              class="py-4 pl-3 pr-4 text-sm text-right text-gray-500 sm:pr-6 md:pr-0"
+            >
               {{ subtotal }}
             </td>
           </tr>
@@ -174,7 +191,8 @@ const space = " ";
                 <span class="font-bold text-gray-900">Routing </span>
               </div>
               <div class="font-normal text-gray-500">
-                <span class="font-bold text-gray-900">PU: </span>{{ destination }}
+                <span class="font-bold text-gray-900">PU: </span
+                >{{ destination }}
               </div>
               <div class="font-normal text-gray-500">
                 <span class="font-bold text-gray-900">DO: </span>
@@ -187,13 +205,19 @@ const space = " ";
                 >{{ vehicle }}
               </div>
             </td>
-            <td class="hidden px-3 py-4 text-sm text-right text-gray-500 sm:table-cell">
+            <td
+              class="hidden px-3 py-4 text-sm text-right text-gray-500 sm:table-cell"
+            >
               {{ service }}
             </td>
-            <td class="hidden px-3 py-4 text-sm text-right text-gray-500 sm:table-cell">
+            <td
+              class="hidden px-3 py-4 text-sm text-right text-gray-500 sm:table-cell"
+            >
               {{ vehicle }}
             </td>
-            <td class="py-4 pl-3 pr-4 text-sm text-right text-gray-500 sm:pr-6 md:pr-0">
+            <td
+              class="py-4 pl-3 pr-4 text-sm text-right text-gray-500 sm:pr-6 md:pr-0"
+            >
               {{ subtotal }}
             </td>
           </tr>
@@ -213,8 +237,10 @@ const space = " ";
             >
               Subtotal
             </th>
-            <td class="pt-6 pl-3 pr-4 text-sm text-right text-gray-500 sm:pr-6 md:pr-0">
-              {{ subtotal }}
+            <td
+              class="pt-6 pl-3 pr-4 text-sm text-right text-gray-500 sm:pr-6 md:pr-0"
+            >
+              {{ subtotal1.toFixed(2) }}
             </td>
           </tr>
           <tr>
@@ -231,8 +257,10 @@ const space = " ";
             >
               Tax
             </th>
-            <td class="pt-4 pl-3 pr-4 text-sm text-right text-gray-500 sm:pr-6 md:pr-0">
-              {{ tax }}
+            <td
+              class="pt-4 pl-3 pr-4 text-sm text-right text-gray-500 sm:pr-6 md:pr-0"
+            >
+              {{ tax.toFixed(2) }}
             </td>
           </tr>
           <tr>
@@ -252,7 +280,7 @@ const space = " ";
             <td
               class="pt-3 pl-3 pr-4 text-sm font-semibold text-right text-gray-900 sm:pr-6 md:pr-0"
             >
-              {{ total }}
+              {{ total.toFixed(2) }}
             </td>
           </tr>
         </tfoot>
@@ -270,8 +298,8 @@ const space = " ";
                   </p>
                   <p class="text-sm text-red-700 max-w-[65ch]">
                     Please note, 24 hours before the scheduled pickup time, an
-                    authorization hold will be placed on your credit card for the full
-                    amount of your reservation.
+                    authorization hold will be placed on your credit card for
+                    the full amount of your reservation.
                   </p>
                 </div>
                 <div class="flex flex-col">
@@ -282,8 +310,8 @@ const space = " ";
                     All prices include taxes, surcharges and gratuity
                   </p>
                   <p class="text-sm text-red-700">
-                    **Does not include hwy tolls, parking fees, or any extra fees incurred
-                    during the trip
+                    **Does not include hwy tolls, parking fees, or any extra
+                    fees incurred during the trip
                   </p>
                 </div>
               </div>
