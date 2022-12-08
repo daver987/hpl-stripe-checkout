@@ -64,7 +64,9 @@ const calculateGratuity = computed(() => {
 //write a function that converts the calculated total to a string with 2 decimal places
 const total = computed(() => {
   return (
-    calculateGratuity.value + calculateTax.value + subtotal1.value.toFixed(2)
+    calculateGratuity.value.toFixed(2) +
+    calculateTax.value.toFixed(2) +
+    subtotal1.value.toFixed(2)
   )
 })
 const tax = computed(() => {
@@ -240,7 +242,7 @@ const space = ' '
             <td
               class="pt-6 pl-3 pr-4 text-sm text-right text-gray-500 sm:pr-6 md:pr-0"
             >
-              {{ subtotal1.toFixed(2) }}
+              {{ subtotal1 }}
             </td>
           </tr>
           <tr>
@@ -260,7 +262,7 @@ const space = ' '
             <td
               class="pt-4 pl-3 pr-4 text-sm text-right text-gray-500 sm:pr-6 md:pr-0"
             >
-              {{ tax.toFixed(2) }}
+              {{ tax }}
             </td>
           </tr>
           <tr>
@@ -280,7 +282,7 @@ const space = ' '
             <td
               class="pt-3 pl-3 pr-4 text-sm font-semibold text-right text-gray-900 sm:pr-6 md:pr-0"
             >
-              {{ total.toFixed(2) }}
+              {{ total }}
             </td>
           </tr>
         </tfoot>
