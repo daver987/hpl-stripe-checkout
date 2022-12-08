@@ -11,5 +11,5 @@ export interface Query {
   destination: string
   vehicle: string
   phone: string
-  roundtrip: boolean
+  roundtrip: string
 }

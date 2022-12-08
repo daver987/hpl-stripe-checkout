@@ -13,8 +13,8 @@ const props = defineProps({
     type: String,
   },
   isRoundTrip: {
-    default: false,
-    type: Boolean,
+    default: 'No',
+    type: String,
   },
   subtotal: {
     default: 99.99,
@@ -47,7 +47,7 @@ const props = defineProps({
 })
 
 const subtotal1 = computed(() => {
-  if (props.isRoundTrip) {
+  if (props.isRoundTrip === 'Yes') {
     return props.subtotal * 2
   }
   return props.subtotal
