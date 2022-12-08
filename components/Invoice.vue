@@ -58,7 +58,7 @@ const calculateFuelSurcharge = computed(() => {
 })
 
 const calculateTax = computed(() => {
-  return subtotal1.value + calculateFuelSurcharge.value * 0.13
+  return (subtotal1.value + calculateFuelSurcharge.value) * 0.13
 })
 
 const calculateGratuity = computed(() => {
@@ -67,11 +67,18 @@ const calculateGratuity = computed(() => {
 
 //write a function that converts the calculated total to a string with 2 decimal places
 const calculateTotal = computed(() => {
-  return calculateGratuity.value + calculateTax.value + subtotal1.value
+  return (
+    calculateGratuity.value +
+    calculateTax.value +
+    subtotal1.value +
+    calculateFuelSurcharge.value
+  )
 })
+
 const total = computed(() => {
   return calculateTotal.value.toFixed(2)
 })
+
 const tax = computed(() => {
   return calculateTax.value.toFixed(2)
 })
