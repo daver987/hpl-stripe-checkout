@@ -62,12 +62,11 @@ const calculateGratuity = computed(() => {
 })
 
 //write a function that converts the calculated total to a string with 2 decimal places
+const calculateTotal = computed(() => {
+  return calculateGratuity.value + calculateTax.value + subtotal1.value
+})
 const total = computed(() => {
-  return (
-    calculateGratuity.value.toFixed(2) +
-    calculateTax.value.toFixed(2) +
-    subtotal1.value.toFixed(2)
-  )
+  return calculateTotal.value.toFixed(2)
 })
 const tax = computed(() => {
   return calculateTax.value.toFixed(2)
