@@ -10,6 +10,13 @@
         Welcome to the High Park Livery Booking Portal</H1
       >
     </div>
+    <section class="py-16 w-full">
+      <Container>
+        <div class="mx-auto max-w-4xl">
+          <Invoice />
+        </div>
+      </Container>
+    </section>
   </div>
 </template>
 

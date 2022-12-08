@@ -1,38 +1,39 @@
 <template>
-  <div class="w-full bg-black">
-    <nav class="grid grid-cols-6 p-5 bg-black mx-auto max-w-6xl">
-      <NuxtLink
-        to="https://highparklivery.com"
-        class="max-w-[120px] col-span-2"
+  <nav class="grid grid-cols-6 p-5 bg-black mx-auto max-w-6xl bg-black">
+    <NuxtLink to="https://highparklivery.com" class="max-w-[120px] col-span-3">
+      <img
+        src="/hpl-logo-3.png"
+        height="568"
+        width="960"
+        alt="High Park Livery logo"
+        class="w-full"
+      />
+    </NuxtLink>
+    <div
+      v-show="true"
+      class="col-span-3 flex flex-row justify-end items-center"
+    >
+      <button
+        @click="$emit('clicked:booked', true)"
+        v-if="show"
+        type="button"
+        class="inline-flex items-center rounded-md border border-transparent bg-red-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
       >
-        <img
-          src="/hpl-logo-3.png"
-          height="568"
-          width="960"
-          alt="High Park Livery logo"
-          class="w-full"
-        />
-      </NuxtLink>
-      <div
-        v-show="true"
-        class="col-span-2 flex flex-row justify-center items-center text-white text-3xl uppercase tracking-widest"
-      >
-        {{ title }}
-      </div>
-      <div
-        v-show="false"
-        class="col-span-2 flex flex-row justify-end items-center"
-      >
-        Page Title
-      </div>
-    </nav>
-  </div>
+        Proceed To Book
+      </button>
+    </div>
+  </nav>
 </template>
+
 <script setup lang="ts">
 defineProps<{
   title?: string
 }>()
+const show = useShowButton()
+
+defineEmits(['clicked:booked'])
 </script>
+
 <style scoped>
 body {
   text-align: center;
