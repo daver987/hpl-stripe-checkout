@@ -6,26 +6,11 @@ useHead({
       async: true,
     },
   ],
-  // link: [
-  //   {
-  //     rel: 'stylesheet',
-  //     href: 'https://unpkg.com/open-props',
-  //   },
-  //   {
-  //     rel: 'stylesheet',
-  //     href: 'https://unpkg.com/open-props/normalize.min.css',
-  //   },
-  //   {
-  //     rel: 'stylesheet',
-  //     href: 'https://unpkg.com/open-props/buttons.min.css',
-  //   },
-  // ],
 })
 </script>
 
 <template>
-  <section>
+  <section class="bg-gray-200">
     <NuxtPage />
   </section>
 </template>
-<style></style>
