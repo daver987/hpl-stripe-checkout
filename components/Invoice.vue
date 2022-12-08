@@ -75,6 +75,8 @@ const calculateTotal = computed(() => {
   )
 })
 
+console.log(calculateTotal.value)
+
 const total = computed(() => {
   return calculateTotal.value.toFixed(2)
 })
@@ -106,12 +108,12 @@ const space = ' '
           ><br />
           Pick up Date:
           <time class="font-normal" :datetime="pickupDate">{{
-            pickupDate
+              pickupDate
           }}</time>
           <br />
           Pick up Time:
           <time class="font-normal" :datetime="pickupTime">{{
-            pickupTime
+              pickupTime
           }}</time>
         </p>
       </div>
