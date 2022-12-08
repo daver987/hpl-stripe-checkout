@@ -50,7 +50,7 @@ const subtotal1 = computed(() => {
   if (props.isRoundTrip) {
     return props.subtotal * 2 * 1.08
   }
-  return props.subtotal
+  return props.subtotal * 1.08
 })
 
 const calculateTax = computed(() => {
