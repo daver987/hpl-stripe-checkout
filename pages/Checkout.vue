@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { Query } from "~/types/query";
-import { ReturnType } from "~/types/returnType";
+import { Query } from '~/types/query'
+import { ReturnType } from '~/types/returnType'
 
 // const vehicleImage = {
 //   cadillacEscalade:
@@ -30,10 +30,9 @@ import { ReturnType } from "~/types/returnType";
 //   }
 // }
 
-const route = (useRoute().query as unknown) as Query;
-console.log(route);
-const quoteNumber = parseInt(route.quote);
-const subtotal = parseFloat(route.amount);
+const route = useRoute().query as unknown as Query
+console.log(route)
+const subtotal = parseFloat(route.amount)
 // const props = {
 //   quoteNumber: route.quote,
 //   firstname: route.fname,
@@ -53,19 +52,19 @@ const subtotal = parseFloat(route.amount);
 const createSession = async () => {
   const { data } = await useFetch(`/api/create-checkout-session`, {
     query: route,
-  });
-  console.log(data);
-  const { statusCode, url, customer } = data.value as ReturnType;
-  console.log(statusCode, url, customer);
+  })
+  console.log(data)
+  const { statusCode, url, customer } = data.value as ReturnType
+  console.log(statusCode, url, customer)
   await navigateTo(url, {
     redirectCode: 303,
     external: true,
-  });
+  })
   return {
     url,
     customer,
-  };
-};
+  }
+}
 </script>
 
 <template>
@@ -75,7 +74,7 @@ const createSession = async () => {
         <Navigation @clicked:booked="createSession" />
         <Invoice
           class="bg-white pt-4"
-          :quoteNumber="quoteNumber"
+          :quoteNumber="route.quotenumber"
           :firstname="route.fname"
           :lastname="route.lname"
           :pickupDate="route.date"
