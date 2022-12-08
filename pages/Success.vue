@@ -10,7 +10,6 @@
         Thank You for Booking with <br />
         High Park Livery!
       </h1>
-
       <div class="bg-black rounded-md inline-block p-16">
         <div
           style="
