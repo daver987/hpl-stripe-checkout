@@ -1,5 +1,5 @@
 <template>
-  <nav class="grid grid-cols-6 p-5 bg-black mx-auto max-w-6xl bg-black">
+  <nav class="grid grid-cols-6 p-5 bg-black mx-auto max-w-6xl">
     <NuxtLink to="https://highparklivery.com" class="max-w-[120px] col-span-3">
       <img
         src="/hpl-logo-3.png"
@@ -9,10 +9,7 @@
         class="w-full"
       />
     </NuxtLink>
-    <div
-      v-show="true"
-      class="col-span-3 flex flex-row justify-end items-center"
-    >
+    <div v-show="true" class="col-span-3 flex flex-row justify-end items-center">
       <button
         @click="$emit('clicked:booked', true)"
         v-if="show"
@@ -27,11 +24,11 @@
 
 <script setup lang="ts">
 defineProps<{
-  title?: string
-}>()
-const show = useShowButton()
+  title?: string;
+}>();
+const show = useShowButton();
 
-defineEmits(['clicked:booked'])
+defineEmits(["clicked:booked"]);
 </script>
 
 <style scoped>
@@ -43,7 +40,7 @@ body {
 
 p {
   color: #a57c52;
-  font-family: 'Nunito Sans', 'Helvetica Neue', sans-serif;
+  font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
   font-size: 20px;
   margin: 0;
 }

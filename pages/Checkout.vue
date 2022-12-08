@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { Query } from '~/types/query'
-import { ReturnType } from '~/types/returnType'
+import { Query } from "~/types/query";
+import { ReturnType } from "~/types/returnType";
 
 // const vehicleImage = {
 //   cadillacEscalade:
@@ -30,48 +30,52 @@ import { ReturnType } from '~/types/returnType'
 //   }
 // }
 
-const route = useRoute().query
-console.log(route)
-const props = {
-  quoteNumber: route.quote,
-  firstname: route.fname,
-  lastname: route.lname,
-  pickupDate: route.date,
-  pickupTime: route.time,
-  origin: route.origin,
-  destination: route.destination,
-  service: route.service,
-  vehicle: route.vehicle,
-  subtotal: route.amount,
-  total: route.amount,
-  tax: route.amount,
-  isRoundTrip: false,
-}
+const route = (useRoute().query as unknown) as Query;
+console.log(route);
+const quoteNumber = parseInt(route.quote);
+const subtotal = parseFloat(route.amount);
+// const props = {
+//   quoteNumber: route.quote,
+//   firstname: route.fname,
+//   lastname: route.lname,
+//   pickupDate: route.date,
+//   pickupTime: route.time,
+//   origin: route.origin,
+//   destination: route.destination,
+//   service: route.service,
+//   vehicle: route.vehicle,
+//   subtotal: route.amount,
+//   total: route.amount,
+//   tax: route.amount,
+//   isRoundTrip: false,
+// }
 
 const createSession = async () => {
   const { data } = await useFetch(`/api/create-checkout-session`, {
     query: route,
-  })
-  console.log(data)
-  const { statusCode, url, customer } = (await data.value) as ReturnType
-  console.log(statusCode, url, customer)
+  });
+  console.log(data);
+  const { statusCode, url, customer } = data.value as ReturnType;
+  console.log(statusCode, url, customer);
   await navigateTo(url, {
     redirectCode: 303,
     external: true,
-  })
+  });
   return {
     url,
     customer,
-  }
-}
+  };
+};
 </script>
 
 <template>
   <div class="bg-gray-200 min-h-screen">
     <section class="py-8 w-full">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <Navigation
-          :quoteNumber="route.quote"
+        <Navigation @clicked:booked="createSession" />
+        <Invoice
+          class="bg-white pt-4"
+          :quoteNumber="quoteNumber"
           :firstname="route.fname"
           :lastname="route.lname"
           :pickupDate="route.date"
@@ -80,16 +84,10 @@ const createSession = async () => {
           :destination="route.destination"
           :service="route.service"
           :vehicle="route.vehicle"
-          :subtotal="route.amount"
-          :total="route.amount"
-          :tax="route.amount"
-          :isRoundTrip="false"
-          @clicked:booked="createSession"
+          :subtotal="subtotal"
+          :isRoundTrip="route.roundtrip"
         />
-        <Invoice class="bg-white pt-4" />
       </div>
     </section>
   </div>
 </template>
-
-<style scoped></style>
