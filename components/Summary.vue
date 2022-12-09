@@ -170,7 +170,7 @@ const space = ' '
               ${{ subtotalWithoutTax }}
             </td>
           </tr>
-          <tr v-if="isRoundTrip === 'yes'" class="border-b border-gray-200">
+          <tr v-if="isRoundTrip === 'Yes'" class="border-b border-gray-200">
             <td class="py-4 pr-3 pl-4 text-sm sm:pl-6 md:pl-0">
               <div class="mt-0.5 text-gray-500 sm:hidden">
                 <span class="font-bold text-gray-900">Routing </span>

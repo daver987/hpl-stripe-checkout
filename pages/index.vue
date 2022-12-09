@@ -13,7 +13,7 @@
     <section class="py-16 w-full">
       <Container>
         <div class="mx-auto max-w-4xl">
-          <Invoice />
+          <Summary />
         </div>
       </Container>
     </section>

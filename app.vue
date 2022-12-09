@@ -2,14 +2,11 @@
 useHead({
   script: [
     {
-      src: "https://js.stripe.com/v3/",
+      src: 'https://js.stripe.com/v3/',
       async: true,
     },
   ],
-});
-
-const test = "hello world";
-console.log(test);
+})
 </script>
 
 <template>
