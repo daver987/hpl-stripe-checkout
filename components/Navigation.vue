@@ -9,7 +9,10 @@
         class="w-full"
       />
     </NuxtLink>
-    <div v-show="true" class="col-span-3 flex flex-row justify-end items-center">
+    <div
+      v-show="true"
+      class="col-span-3 flex flex-row justify-end items-center"
+    >
       <button
         @click="$emit('clicked:booked', true)"
         v-if="show"
@@ -24,11 +27,11 @@
 
 <script setup lang="ts">
 defineProps<{
-  title?: string;
-}>();
-const show = useShowButton();
+  title?: string
+}>()
+const show = true
 
-defineEmits(["clicked:booked"]);
+defineEmits(['clicked:booked'])
 </script>
 
 <style scoped>
@@ -40,7 +43,7 @@ body {
 
 p {
   color: #a57c52;
-  font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
+  font-family: 'Nunito Sans', 'Helvetica Neue', sans-serif;
   font-size: 20px;
   margin: 0;
 }

@@ -25,7 +25,7 @@ export default defineEventHandler(async (event) => {
     automatic_tax: { enabled: false },
     customer: customer.id,
   })
-  console.log('session', session)
+
   return {
     statusCode: 200,
     url: session.url,
